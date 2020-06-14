@@ -15,6 +15,8 @@
         
         ->Warrior special ability is to sheild/block enemy attack by 50% on enemy turn, and deal 50% of attack damage.
 ->If you feel the game so easy, you can simply change the stats of your desired role or change enemy stats from Role.py file.
+
 ->Run the game from Start-Game.py file
+
 ->This Project was created from my imagination, any advice or any criticism is welcomed.
 
