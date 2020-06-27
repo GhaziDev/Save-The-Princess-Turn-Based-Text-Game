@@ -20,7 +20,7 @@
 
         ->Assassin special Ability is to flee from the fight which is count as a winning fight.
         
-        ->Knight special ability is to dodge,this will reduce the enemy attack on the next turn, and deal 60% percent of attack damage.
+        ->Knight special ability is to dodge,this will reduce the enemy attack on the next turn, and deal 60% of attack damage.
         
         ->Healer special ability is to heal,you can upgrade your healing stat at the begininng of the game if you want.
         
