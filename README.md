@@ -1,17 +1,17 @@
 # Save-The-Princess-Turn-Based-Text-Game
 **INSTRUCTIONS:**
 
-0)Run the game from Start-Game.py file.
+1)Run the game from Start-Game.py file.
 
-1)This game will start by asking you to write your Name.
+2)This game will start by asking you to write your Name.
 
-2)Then it will ask you about the role you want to choose(pick the number of role you want).
+3)Then it will ask you about the role you want to choose(pick the number of role you want).
 
-3)The stat of the role you chose will show to you,indicating that you have 5 points to update your current stat,then the game start.
+4)The stat of the role you chose will show to you,indicating that you have 5 points to update your current stat,then the game start.
 
-4)After the first script of the story finish, there are 3 operations you can perform one of them each time : (1.walk, 2.rest, 3.quit), press the number of operation you want to perform,and remember you cant rest if your health is full, and quitting means you lose all progress.
+5)After the first script of the story finish, there are 3 operations you can perform one of them each time : (1.walk, 2.rest, 3.quit), press the number of operation you want to perform,and remember you cant rest if your health is full, and quitting means you lose all progress.
 
-5)Once you face an enemy ,there are 3 operations you can perform one of them each time: (1.attack,2.special attack(different for each role),3.quit), as mentioned before, press the number of the operation you want to perform.
+6)Once you face an enemy ,there are 3 operations you can perform one of them each time: (1.attack, 2.special attack(different for each role) , 3.quit), as mentioned before, press the number of the operation you want to perform.
 
 
 ->This is a story game where you gotta save the princess, choose the role you like.
