@@ -4,6 +4,7 @@ from Role import Role
 from Stage import Stage
 from Story import Story
 import time
+from colored import stylize
 r = Role()
 r.choose_role()
 r.update_stat()
@@ -12,8 +13,8 @@ r.update_enemy_stats()
 
 
 class Operations:
-
-    def __init__(self):
+    
+    def __init__(self): 
         self.max_hp = r.stat['Health']
         if(r.your_role == r.role[0] or r.your_role == r.role[2] or r.your_role == r.role[4]):
             self.max_stamina = r.stat['Stamina']
@@ -68,7 +69,7 @@ class Operations:
                         if r.your_role == "Knight":
 
                             while player_turn:
-                                print("Your stats : ")
+                                print(stylize("Your stats : ", colored.fg('green')))
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
                                 i = input(
@@ -107,7 +108,7 @@ class Operations:
                                         continue
                                 enemy_turn = True
                                 player_turn = False
-                            print(f"{w} stats is : ")
+                            print(stylize(f"{w} stats is : ",colored.fg('red')))
                             for i, j in r.enemies_stat.items():
                                 print(f'{i}: {j} || ', end=" ")
                             if r.enemies_stat["Health"] <= 0:
@@ -519,24 +520,22 @@ class Operations:
 
                     continue
                 S = Story()
-                s = Stage()
+                st = Stage()
                 if(self.steps[0] == 1):
                     for i in S.the_beginning:
                         print(i, end="")
                         time.sleep(0.1)
                 if(self.steps[0] == 2):
-                   ##
                     for i in S.step2:
                         print(i, end="")
                         time.sleep(0.1)
                 if(self.steps[0] == 4):
-
                     for i in S.step4:
                         print(i, end="")
                         time.sleep(0.1)
                 if(self.steps[0] == 10):
-                    s.stage += 1
-                    s.stage_up()
+                    st.stage += 1
+                    st.stage_up()
                 if(self.steps[0] == 13):
 
                     for i in S.step13:
@@ -544,8 +543,8 @@ class Operations:
                         time.sleep(0.1)
 
                 if(self.steps[0] == 19):
-                    s.stage += 2
-                    s.stage_up()
+                    st.stage += 2
+                    st.stage_up()
                 if(self.steps[0] == 20):
                     for i in S.step20:
                         print(i, end="")
