@@ -1,5 +1,6 @@
 from Enemy import Enemy
 import random
+from colored import stylize
 
 
 class Role:
@@ -16,11 +17,9 @@ class Role:
         self.max_level = 6
 
     def choose_role(self):
-
         for i, j in self.role.items():
-            print(i, j)
+            print("->",i, j)
         self.roles = input("Choose your Role :  ")
-
         while True:
             if self.roles == "K".lower() or self.roles == '0' or self.roles == "Knight".lower():
                 self.your_role = self.role[0]
@@ -55,9 +54,9 @@ class Role:
         if self.your_role == self.role[0]:
             self.stat = {"Attack": 12, "Defense": 5,
                          "Health": 110, "Dodge": 8, "Stamina": 10}
-            print("This is your Stat :  ")
+            print(stylize("This is your Stat :  ",colored.fg('green')))
             for i, j in self.stat.items():
-                print(f"{i}:{j}")
+                print(f"{i}:{j}",'||',end=" ")
 
         elif self.your_role == self.role[1]:
             self.stat = {"Attack": 15, "Defense": 9,
@@ -91,6 +90,7 @@ class Role:
                 print(f"{i}:{j}")
 
         while self.points > 0:
+            print('\n')
             print(
                 f"You have {self.points} points to spend and update your stat ")
 
@@ -209,7 +209,6 @@ class Role:
                                  "Health": 70, "Stamina": 11}  # health=70
 
     def update_boss_stats(self, w=None):
-        for i in self.e.boss:
             if w == "SHIELDOS":
                 self.enemies_stat = {"Attack": 8, "Defense": 18,
                                      "Health": 100, "Stamina": 9}
