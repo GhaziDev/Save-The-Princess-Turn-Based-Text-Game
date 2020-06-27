@@ -5,7 +5,7 @@
 
 2)This game will start by asking you to write your Name.
 
-3)Then it will ask you about the role you want to choose(pick the number of role you want).
+3)Then it will ask you about the role you want to choose(press the number of the role you want).
 
 4)The stat of the role you chose will show to you,indicating that you have 5 points to update your current stat,then the game start.
 
