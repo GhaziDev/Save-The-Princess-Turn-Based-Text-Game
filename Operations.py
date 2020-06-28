@@ -4,6 +4,7 @@ from Role import Role
 from Stage import Stage
 from Story import Story
 import time
+import colored
 from colored import stylize
 r = Role()
 r.choose_role()
@@ -13,7 +14,7 @@ r.update_enemy_stats()
 
 
 class Operations:
-    
+
     def __init__(self): 
         self.max_hp = r.stat['Health']
         if(r.your_role == r.role[0] or r.your_role == r.role[2] or r.your_role == r.role[4]):
@@ -69,9 +70,10 @@ class Operations:
                         if r.your_role == "Knight":
 
                             while player_turn:
-                                print(stylize("Your stats : ", colored.fg('green')))
+                                print(stylize("\nYour stats : ", colored.fg('green')))
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print('\n')
                                 i = input(
                                     "\nChoose an option : 1.Attack, 2.Dodge , 3.quit().....(Choose a number.)   ")
                                 a = i
@@ -85,7 +87,7 @@ class Operations:
 
                                 elif i == '2':
                                     print(
-                                        "You will dodge some damage of the next attack and deal 60'%' of attack damage")
+                                        "\nYou will dodge some damage of the next attack and deal 60'%' of attack damage")
                                     r.enemies_stat['Health'] -= self.fight_equations(
                                         player_turn)*0.6
                                     r.enemies_stat['Health'] = int(
@@ -108,14 +110,16 @@ class Operations:
                                         continue
                                 enemy_turn = True
                                 player_turn = False
-                            print(stylize(f"{w} stats is : ",colored.fg('red')))
+                            print(stylize(f"\n{w} stats is : ",colored.fg('red')))
                             for i, j in r.enemies_stat.items():
                                 print(f'{i}: {j} || ', end=" ")
+                            print('\n')
                             if r.enemies_stat["Health"] <= 0:
                                 print(f"\nYou have defeated {w}")
 
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print('\n')
                                 r.update_enemy_stats()
                                 enemy_turn = False
 
@@ -138,10 +142,10 @@ class Operations:
                                             r.enemies_stat['Magicka'] -= 1
 
                                 elif a == '2':
-                                    r.stat['Health'] -= (self.fight_equations(player_turn) //
-                                                         r.stat['Dodge'])
+                                    r.stat['Health'] -= (self.fight_equations(player_turn) /
+                                                         r.stat['Dodge'])*15
                                     print(
-                                        "You have dodged some damage of the attack")
+                                        "\nYou have dodged some damage of the attack")
                                     if(w == e.enemies[0] or w == e.enemies[2] or w == e.enemies[3]):
                                         if(r.enemies_stat['Stamina'] < 1):
                                             r.stat['Health'] -= 2
@@ -157,7 +161,7 @@ class Operations:
                                 enemy_turn = False
                             if(r.stat["Health"] <= 0):
 
-                                print("You Died")
+                                print("\nYou Died")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
                                 print(
@@ -166,9 +170,10 @@ class Operations:
 
                         elif r.your_role == "Warrior":
                             while player_turn:
-                                print("Your stats : ")
+                                print("\nYour stats : ")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print('\n')
                                 i = input(
                                     "\nChoose an option : 1.Attack , 3.quit().....(Choose a number.)")
 
@@ -182,7 +187,7 @@ class Operations:
                                         r.stat['Stamina'] -= 1
                                 elif i == '2':
                                     print(
-                                        f"You will endure 50'%' of {w} attack and deal 50'%' of attack damage.")
+                                        f"\nYou will endure 50'%' of {w} attack and deal 50'%' of attack damage.")
                                     r.enemies_stat['Health'] -= self.fight_equations(
                                         player_turn)*0.5
                                     r.enemies_stat['Health'] = int(
@@ -210,14 +215,16 @@ class Operations:
 
                                 enemy_turn = True
                                 player_turn = False
-                            print(f'{w} stats is : ')
+                            print(f'\n{w} stats is : ')
                             for i, j in r.enemies_stat.items():
                                 print(f"{i}: {j} || ", end=" ")
+                            print('\n')
                             if r.enemies_stat["Health"] <= 0:
                                 print(f"\nYou have defeated {w}")
 
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j}", end=" ")
+                                print('\n')
                                 enemy_turn = False
 
                             while(enemy_turn):
@@ -256,7 +263,7 @@ class Operations:
 
                             if(r.stat["Health"] <= 0):
 
-                                print("You Died")
+                                print("\nYou Died")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
                                 print(
@@ -265,7 +272,7 @@ class Operations:
 
                         elif r.your_role == "Magician":
                             while player_turn:
-                                print("Your stats : ")
+                                print("\nYour stats : ")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
                                 i = input(
@@ -293,13 +300,15 @@ class Operations:
                                 enemy_turn = True
                                 player_turn = False
 
-                            print(f"{w} stats is : ")
+                            print(f"\n{w} stats is : ")
                             for i, j in r.enemies_stat.items():
                                 print(f'{i}: {j} || ', end=" ")
+                            print('\n')
                             if r.enemies_stat["Health"] <= 0:
                                 print(f"\nYou have defeated {w}")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j}", end=" ")
+                                print('\n')
                                 enemy_turn = False
 
                             while(enemy_turn):
@@ -324,7 +333,7 @@ class Operations:
                                     enemy_turn = False
                             if(r.stat["Health"] <= 0):
 
-                                print("You Died")
+                                print("\nYou Died")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j}", end=" ")
                                 print(
@@ -336,6 +345,7 @@ class Operations:
                                 print("Your stats : ")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print("\n")
                                 i = input(
                                     "\nChoose an option : 1.Attack , 2.Heal, 3.quit().....(Choose a number.)  ")
                                 a = i
@@ -371,14 +381,16 @@ class Operations:
                                         continue
                                 enemy_turn = True
                                 player_turn = False
-                            print(f"{w} stats is : ")
+                            print(f"\n{w} stats is : ")
                             for i, j in r.enemies_stat.items():
                                 print(f'{i}: {j} || ', end=" ")
+                            print("\n")
                             if r.enemies_stat["Health"] <= 0:
                                 print(f"\nYou have defeated {w}")
 
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j}", end=" ")
+                                print('\n')
                                 enemy_turn = False
 
                             while(enemy_turn):
@@ -416,18 +428,20 @@ class Operations:
                                 enemy_turn = False
                             if(r.stat["Health"] <= 0):
 
-                                print("You Died")
+                                print("\nYou Died")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print("\n")
                                 print(
                                     " \nYou lost, run the game again to restart it.")
                                 quit()
 
                         elif r.your_role == "Assassin":
                             while player_turn:
-                                print("Your stats : ")
+                                print("\nYour stats : ")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print("\n")
                                 i = input(
                                     "\nChoose an option : 1.Attack, 2.Flee , 3.quit().....(Choose a number.)   ")
                                 a = i
@@ -441,14 +455,14 @@ class Operations:
 
                                 elif i == '2':
                                     print(
-                                        "You have 5'%' to flee from the battle and win it")
+                                        "\nYou have 5'%' to flee from the battle and win it")
 
-                                    if random.choice(range(1, 50)) == 4:
-                                        print("FLEE SUCESS!!")
-                                        print(f"{w} is defeated.")
+                                    if random.choice(range(1, 10)) == 4:
+                                        print("\nFLEE SUCESS!!")
+                                        print(f"\n{w} is defeated.")
                                         r.enemies_stat["Health"] = 0
                                     else:
-                                        print("Flee failed")
+                                        print("\nFlee failed")
                                     if(r.stat['Stamina'] < 1):
                                         r.stat['Health'] -= 2
                                     else:
@@ -466,14 +480,16 @@ class Operations:
                                         continue
                                 player_turn = False
                                 enemy_turn = True
-                            print(f"{w} stats is : ")
+                            print(f"\n{w} stats is : ")
                             for i, j in r.enemies_stat.items():
                                 print(f'{i}: {j} || ', end=" ")
+                            print('\n')
 
                             if r.enemies_stat["Health"] <= 0:
                                 print(f"\nYou have defeated {w}")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j}", end=" ")
+                                print('\n')
                                 enemy_turn = False
 
                             while(enemy_turn):
@@ -511,9 +527,10 @@ class Operations:
                                 player_turn = True
                                 enemy_turn = False
                             if(r.stat["Health"] <= 0):
-                                print("You Died")
+                                print("\nYou Died")
                                 for i, j in r.stat.items():
                                     print(f"{i} : {j} || ", end=" ")
+                                print('\n')
                                 print(
                                     "\nYou lost, run the game again to restart it.")
                                 quit()
@@ -556,22 +573,23 @@ class Operations:
                         time.sleep(0.1)
                 if(self.steps[0] == 23):
                     print(
-                        "CONGRATULATIONS, THIS IS YOUR LAST STEP, YOU HAVE COMPLETED THE GAME.")
+                        "\nCONGRATULATIONS, THIS IS YOUR LAST STEP, YOU HAVE COMPLETED THE GAME.")
                     quit()
             elif ask == '1' or ask == 'rest' or ask == 'r':
                 if(r.stat["Health"] >= self.max_hp):
                     print(
-                        "You  already have full health, you dont need to rest")
+                        "\nYou already have full health, you dont need to rest")
                 else:
                     self.rest_equations()
-                    print("Stats are refilled!")
+                    print("\nStats are refilled!")
             elif ask == '2' or ask == 'quit' or ask == 'q':
-                print("Once you quit, you will lose all progress ")
+                print("\nOnce you quit, you will lose all progress ")
                 q = input("Are you sure you want to quit ?  ")
                 if q == 'yes' or q == 'y':
                     exit()
                 elif q == 'no' or q == 'n':
                     continue
                 else:
-                    print("I assume this as 'No' ")
+                    print("\nI assume this as 'No' ")
                     continue
+
