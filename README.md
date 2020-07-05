@@ -1,7 +1,7 @@
 # Save-The-Princess-Turn-Based-Text-Game
 **INSTRUCTIONS:**
 
-1)Run the game from ``Start-Game.py`` file.
+1)Run the game from ``start-game.py`` file.
 
 2)This game will start by asking you to write your Name.
 
@@ -17,13 +17,13 @@
 ->This is a story game where you gotta save the princess, choose the role you like.
 
 
-->If you feel the game so easy, you can simply change the stats of your desired role or change enemy stats from ``Role.py`` file.
+->If you feel the game so easy, you can simply change the stats of your desired role or change enemy stats from ``role.py`` file.
 
 **UPDATES:**
 
 (28/6/2020)
 
--Added new file ``Output_Unbuffering.py`` in case some people would have delay in priniting the output.
+-Added new file ``output_unbuffering.py`` in case some people would have delay in priniting the output.
 
 -Enhanced CLI look of the game, it look much better now,i might edit it more later.
 
