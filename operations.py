@@ -15,18 +15,18 @@ def choose_role():
         while(True):
             print(stylize("->1.KNIGHT\n\n->2.WARRIOR\n\n->3.ASSASSSIN",colored.fg('dark_cyan')))
             role=input("\nPick the role you want to play :  ").lower()
-            if role=='k' or role=='knight' or role=='1':
+            if role in {'k','knight','1'}':
                 k=Knight()
                 r.stat=k.stat
                 r.update_stat()
 
                 break
-            elif role=='w' or role=='warrior' or role=='2':
+            elif role in {=='w','warrior','2'}:
                 w=Warrior()
                 r.stat=w.stat
                 r.update_stat()
                 break
-            elif role=='a' or role=='assassin' or role=='3':
+            elif role in {'a','assassin', '3'}:
                 a=Assassin()
                 r.stat=a.stat
                 r.update_stat()
@@ -73,7 +73,7 @@ class Operations:
             enemy_turn=False
             player_turn=False
             ask = input(stylize("\nDo you want to :  0.walk, 1.rest, 2.quit  ? ",colored.fg('blue'))).lower()
-            if ask == '0' or ask == 'walk' or ask == 'w':
+            if ask in {'0','walk','w'}:
                 self.steps += 1
                 if self.steps==11:
                     print("CONGRATULATIONS!!!, YOU HAVE COMPLETED THE GAME!!!")
@@ -157,7 +157,7 @@ class Operations:
                                 "\nYou lost, run the game again to restart it.",colored.fg('green_yellow')))
                             quit()        
                 continue
-            if ask == '1' or ask == 'rest' or ask == 'r':
+            if ask in {'1','rest','r'}:
 
                 if(r.stat["Health"] >= self.max_hp/2):
                     print(
